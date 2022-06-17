@@ -1,0 +1,39 @@
+
+<div class="row">
+  <div class="col-6"> <h1>Clientes</h1> </div>
+  <div class="col-6 d-flex justify-content-end">
+    <a href="/addcliente" type="button" class="btn btn-primary align-self-center">+ Adicionar Cliente </a>
+  </div>
+</div>
+
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"> Nome </th>
+      <th scope="col"> Telefone </th>
+      <th scope="col"> Data da Compra </th>
+      <th scope="col"> Total Compra </th>
+      <th scope="col"> Cartão/Dinheiro </th>
+      <th scope="col" class="text-center"> Ação </th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each rows}}
+    <tr>
+      <th scope="row">{{this.id}}</th>
+      <td> {{this.nome}} </td>
+      <td> {{this.telefone}} </td>
+      <td> {{this.data_compra}} </td>
+      <td> {{this.total_compra}} </td>
+      <td> {{this.tipo_pagamento}} </td>
+      
+      <td class="text-center">  
+        <a href="#" type="button" class="btn btn-light btn-small"><i class="bi bi-eye"></i> Ver </a>
+        <a href="#" type="button" class="btn btn-light btn-small"><i class="bi bi-pencil"></i> Editar </a>
+        <a href="#" type="button" class="btn btn-light btn-small"><i class="bi bi-person-x"></i> Deletar </a>
+      </td>
+      {{/each}}
+  </tbody>
+</table>
