@@ -1,0 +1,33 @@
+<div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingInput" value="{{this.nome}}" placeholder="Nome" name="nome">
+    <label for="floatingInput">Nome do Cliente</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingInput" value="{{this.telefone}}" placeholder="Telefone" name="telefone">
+    <label for="floatingInput">Telefone do Cliente</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="date" class="form-control" id="floatingInput" value="{{this.data_compra}}" placeholder="Data da Compra" name="data_compra">
+    <label for="floatingInput">Data da Compra</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingInput" value="{{this.total_compra}}" placeholder="Total da Compra" name="total_compra">
+    <label for="floatingInput">Total da Compra</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingInput" value="{{this.tipo_pagamento}}" placeholder="Tipo de Pagamento" name="tipo_pagamento">
+    <label for="floatingInput">Tipo do Pagamento</label>
+  </div>
+
+  <div class="form-floating">
+    <textarea class="form-control" placeholder="Observação" name="observacao" id="floatingTextarea2" style="height: 100px">{{this.observacao}}</textarea>
+    <label for="floatingTextarea2">Observação</label>
+  </div>
+
+  <div class="col-12 d-grid">
+    <button class="btn btn-primary" type="submit">Salvar</button>
+  </div>
