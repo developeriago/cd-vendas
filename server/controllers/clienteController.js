@@ -21,7 +21,8 @@ exports.listar = (req, res)=>{
             connection.release();
 
             if(!err){
-                res.render('home', { rows });
+                let removecliente = req.query.removed;
+                res.render('home', { rows, removecliente });
             }else{
                 console.log(err);
             }
@@ -116,7 +117,8 @@ exports.atualizar = (req, res)=>{
         console.log('Connected as ID' + connection.threadid);
 
         //cliente the connection
-        connection.query('UPDATE clientes SET nome = ?, telefone = ? where id = ?', [nome, telefone, req.params.id] , (err, rows)=>{
+        connection.query('UPDATE clientes SET nome = ?, telefone = ?, data_compra = ?, total_compra = ?, tipo_pagamento = ?, observacao = ? where id = ?', 
+            [nome, telefone, data_compra, total_compra, tipo_pagamento, observacao, req.params.id] , (err, rows)=>{
             connection.release();
 
             if(!err){
@@ -129,7 +131,7 @@ exports.atualizar = (req, res)=>{
                         connection.release();
             
                         if(!err){
-                            res.render('edit-cliente', { rows });
+                            res.render('edit-cliente', { rows, alert: `O cliente ${nome} foi alterado com sucesso! ` });
                         }else{
                             console.log(err);
                         }
@@ -139,6 +141,71 @@ exports.atualizar = (req, res)=>{
                 });
 
 
+            }else{
+                console.log(err);
+            }
+
+            console.log('The data from cliente table: \n', rows);
+        });
+    });
+}
+
+//Deletar cliente
+exports.deletar = (req, res)=>{
+
+    //Deleta o usuario permanente
+    //pool.getConnection((err, connection)=>{
+        //if(err) throw err;
+        //console.log('Connected as ID' + connection.threadid);
+
+        //cliente the connection
+        //connection.query('DELETE from clientes where id = ?', [req.params.id] , (err, rows)=>{
+            //connection.release();
+
+           // if(!err){
+               // res.redirect('/');
+            //}else{
+                //console.log(err);
+            //}
+
+            //console.log('The data from cliente table: \n', rows);
+        //});
+   // });
+
+    //Inativar o usuario
+    pool.getConnection((err, connection)=>{
+        if(err) throw err;
+        console.log('Connected as ID' + connection.threadid);
+
+        //cliente the connection
+        connection.query('UPDATE clientes SET status = ? where id = ?', ['inativo', req.params.id] , (err, rows)=>{
+            connection.release();
+
+            if(!err){
+                let removecliente = encodeURIComponent('Cliente removido! ');
+                res.redirect('/?removed=' + removecliente);
+            }else{
+                console.log(err);
+            }
+
+            console.log('The data from cliente table: \n', rows);
+        });
+    });
+}
+
+//Ver cadastro
+exports.ver = (req, res)=>{
+
+    pool.getConnection((err, connection)=>{
+        if(err) throw err;
+        console.log('Connected as ID' + connection.threadid);
+
+        //cliente the connection
+        connection.query('select * from clientes where id = ?', [req.params.id], (err, rows)=>{
+            connection.release();
+
+            if(!err){
+                res.render('view-cliente', { rows });
             }else{
                 console.log(err);
             }

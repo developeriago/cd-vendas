@@ -1,3 +1,9 @@
+{{#if removecliente}}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    Cliente removido com sucesso!
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+{{/if}}
 
 <div class="row">
   <div class="col-6"> <h1>Clientes</h1> </div>
@@ -30,9 +36,9 @@
       <td> {{this.tipo_pagamento}} </td>
       
       <td class="text-center">  
-        <a href="#" type="button" class="btn btn-light btn-small"><i class="bi bi-eye"></i> Ver </a>
+        <a href="/viewcliente/{{this.id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-eye"></i> Ver </a>
         <a href="/editcliente/{{this.id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-pencil"></i> Editar </a>
-        <a href="#" type="button" class="btn btn-light btn-small"><i class="bi bi-person-x"></i> Deletar </a>
+        <a href="/{{this.id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-person-x"></i> Deletar </a>
       </td>
       {{/each}}
   </tbody>

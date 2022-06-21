@@ -1,0 +1,55 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Cliente</li>
+  </ol>
+</nav>
+
+<div class="div">
+    
+    {{#each rows}}
+    <div class="row mb-5">
+        <div class="col text-center">
+            <h3> {{this.nome}} </h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"> Nome </th>
+                        <th scope="col"> Telefone </th>
+                        <th scope="col"> Data da Compra </th>
+                        <th scope="col"> Total da Compra </th>
+                        <th scope="col"> Tipo de Pagamento </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th scope="row"> {{this.nome}} </th>
+                        <td> {{this.telefone}} </td>
+                        <td> {{this.data_compra}} </td>
+                        <td> {{this.total_compra}} </td>
+                        <td> {{this.tipo_pagamento}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <b>Observação</b>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{this.observacao}}
+        </div>
+    </div>
+
+    {{/each}}
+
+</div>
