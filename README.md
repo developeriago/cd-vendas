@@ -28,4 +28,7 @@ $npm install
 $npm start
 
 # O servidor iniciará na porta:3000 - acesse http://localhost:3000/
+<<<<<<< HEAD
 	
+=======
+>>>>>>> a8a2cb8a37d3ec19774d2def68a765aa7302c761
