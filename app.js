@@ -7,7 +7,7 @@ const app = express();
 
 require('dotenv').config();
 
-const port = process.env.PORT || 3000;
+
 
 
 
@@ -55,6 +55,6 @@ app.use('/addcliente', routes);
 
 
 //List server
-app.listen(port, ()=>{
-    console.log(`Servidor rodando na porta ${port}`);
+app.listen(process.env.PORT, ()=>{
+    console.log(`Servidor rodando na porta ` + process.env.PORT);
 });
