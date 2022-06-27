@@ -26,6 +26,7 @@ app.engine('.hbs', engine({extname: '.hbs'}));
 app.set('view engine', '.hbs');
 app.set('views', './views');
 
+
 // Connection Pool
 const pool = mysql.createPool({
     connectionLimiter: 100,
@@ -47,7 +48,6 @@ const routes = require('./server/routes/cliente');
 app.use('/', routes);
 app.use('/buscar', routes);
 app.use('/addcliente', routes);
-
 
 
 

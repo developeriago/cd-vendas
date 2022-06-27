@@ -11,7 +11,7 @@ const pool = mysql.createPool({
 
 //Listar todos os clientes na home
 exports.listar = (req, res)=>{
-
+    
     pool.getConnection((err, connection)=>{
         if(err) throw err;
         console.log('Connected as ID' + connection.threadid);
@@ -62,17 +62,17 @@ exports.form = (req, res)=>{
 }
 
 exports.create = (req, res)=>{
-    const {nome, telefone, data_compra, total_compra, tipo_pagamento, observacao} = req.body;
+    const {nome, telefone, data_compra, total_compra, tipo_pagamento, primeira_parcela, segunda_parcela, terceira_parcela, quarta_parcela, quinta_parcela, observacao} = req.body;
 
     pool.getConnection((err, connection)=>{
         if(err) throw err;
         console.log('Connected as ID' + connection.threadid);
 
-        let seachTerm = req.body.buscar;
+        //let seachTerm = req.body.buscar;
 
         //cliente the connection
-        connection.query('INSERT INTO clientes SET nome = ?, telefone = ?, data_compra = ?, total_compra = ?, tipo_pagamento = ?, observacao = ? ', 
-            [nome, telefone, data_compra, total_compra, tipo_pagamento, observacao], (err, rows)=>{
+        connection.query('INSERT INTO clientes SET nome = ?, telefone = ?, data_compra = ?, total_compra = ?, tipo_pagamento = ?, primeira_parcela = ?, segunda_parcela = ?, terceira_parcela = ?, quarta_parcela = ?, quinta_parcela = ?, observacao = ? ', 
+            [nome, telefone, data_compra, total_compra, tipo_pagamento, primeira_parcela, segunda_parcela, terceira_parcela, quarta_parcela, quinta_parcela, observacao], (err, rows)=>{
             connection.release();
 
             if(!err){
