@@ -5,12 +5,21 @@
   </div>
 {{/if}}
 
+
+  <div class="row">
+    <div class="col-6"> <h1>Clientes</h1> </div>
+    <div class="col-6 d-flex justify-content-end">
+      <a href="/addcliente" type="button" class="btn btn-primary align-self-center">+ Adicionar Cliente </a>
+    </div>
+  </div>
+<br>
 <div class="row">
-  <div class="col-6"> <h1>Clientes</h1> </div>
+  <div class="col-6"> </div>
   <div class="col-6 d-flex justify-content-end">
-    <a href="/addcliente" type="button" class="btn btn-primary align-self-center">+ Adicionar Cliente </a>
+        <a href="/total" type="button" class="btn btn-info align-self-center"> Ver Total de Vendas </a>
   </div>
 </div>
+<br>
 
 <table class="table table-bordered">
   <thead class="thead-dark">
@@ -43,3 +52,7 @@
       {{/each}}
   </tbody>
 </table>
+
+
+
+

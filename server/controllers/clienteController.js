@@ -32,6 +32,30 @@ exports.listar = (req, res)=>{
     });
 }
 
+
+//Listar todos os clientes na home
+exports.total = (req, res)=>{
+    
+    pool.getConnection((err, connection)=>{
+        if(err) throw err;
+        console.log('Connected as ID' + connection.threadid);
+
+        //cliente the connection
+        connection.query('select sum(total_compra) as total from clientes where status = "ativo"', (err, rows)=>{
+            connection.release();
+
+            if(!err){
+                let removecliente = req.query.removed;
+                res.render('total', { rows, removecliente });
+            }else{
+                console.log(err);
+            }
+
+            console.log('The data from cliente table: \n', rows);
+        });
+    });
+}
+
 //Busca por nome na barra de pesquisa
 
 exports.buscar = (req, res)=>{
