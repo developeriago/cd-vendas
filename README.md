@@ -10,7 +10,7 @@ Realiza registros de vendas, onde pode ver o cliente específico, edita o client
 ### Pré-Requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Node.js], [mysql], [servidor local] 
+Node.js, mysq, servidor local(xampp)
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
 ### Rodando o Projeto
