@@ -16,4 +16,15 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 ### Rodando o Projeto
 
 # Clone este repositório
-$ git clone
+$ git clone https://github.com/developeriago/cs-vendas
+
+# Acesse a pasta do projeto no terminal/cmd
+$ cd cd-vendas
+
+# Instale as dependências
+$npm install
+
+# Execute a aplicação em modo de desenvolvimento
+$npm start
+
+# O servidor iniciará na porta:3000 - acesse http://localhost:3000/
