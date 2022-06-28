@@ -9,14 +9,14 @@
   <div class="row">
     <div class="col-6"> <h1>Clientes</h1> </div>
     <div class="col-6 d-flex justify-content-end">
-      <a href="/addcliente" type="button" class="btn btn-primary align-self-center">+ Adicionar Cliente </a>
+      <a href="/addcliente" type="button" class="btn btn-success align-self-center" >+ Adicionar Cliente </a>
     </div>
   </div>
 <br>
 <div class="row">
   <div class="col-6"> </div>
   <div class="col-6 d-flex justify-content-end">
-        <a href="/total" type="button" class="btn btn-info align-self-center"> Ver Total de Vendas </a>
+        <a href="/total" type="button" class="btn btn-success align-self-center" style="background-color:#d63384"> Ver Total de Vendas </a>
   </div>
 </div>
 <br>
@@ -45,9 +45,9 @@
       <td> {{this.tipo_pagamento}} </td>
       
       <td class="text-center">  
-        <a href="/viewcliente/{{this.id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-eye"></i> Ver </a>
-        <a href="/editcliente/{{this.id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-pencil"></i> Editar </a>
-        <a href="/{{this.id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-person-x"></i> Deletar </a>
+        <a href="/viewcliente/{{this.id}}" type="button" class="btn btn-warning btn-small"><i class="bi bi-eye"></i> Ver </a>
+        <a href="/editcliente/{{this.id}}" type="button" class="btn btn-primary btn-small"><i class="bi bi-pencil"></i> Editar </a>
+        <a href="/{{this.id}}" type="button" class="btn btn-danger btn-small"><i class="bi bi-person-x"></i> Deletar </a>
       </td>
       {{/each}}
   </tbody>
