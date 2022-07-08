@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `clientes` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT primary KEY,
   `nome` varchar(50) NOT NULL,
   `telefone` varchar(50) NOT NULL,
   `data_compra` text NOT NULL,
